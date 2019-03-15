@@ -2,7 +2,7 @@
 This is a test attempt for: https://github.com/bbc/vj-code-tests/tree/master/airquality by Michael Kivuva.
 
 ## How to install/run
-I live demo for the project is available at https://airqualitytestapp.herokuapp.com/
+I live demo for the project is available at https://airqualitytestapp.herokuapp.com/ . 
 To deploy the project clone the `./airQualityProject/dist` folder to your computer.
 Navigate into the `./airQualityProject/dist` folder and serve index.html using a http-server.
 I recommend using https://www.npmjs.com/package/http-server which can be installed as follows:
@@ -42,7 +42,7 @@ Files for the mockup can be found in `./airQualityProject/process`
 
 Below is a preview of the mockup.
 ![](https://airqualitytestapp.herokuapp.com/preview.png)
-Once I had the design ready. I created a new angular app in with angular-cli and started building the component. 
+Once I had the design ready. I created a new angular app with angular-cli and started building the components. 
 ```sh
 $ ng new airQualityProject
 ```
