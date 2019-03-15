@@ -1,0 +1,18 @@
+
+<div class="pad graph" *ngIf="city">
+     
+      <div class="grid">
+          <div class="ciggs">
+          <div class="pmWrap">
+             <span [ngStyle]="setParticleProperties()" *ngFor="let item of getArray(city.aqi.split(' ')[0])"></span>
+          </div>
+          <div class="cigg" *ngFor="let item of getArray(city.cigg)"></div>
+          </div>
+          <h4>{{city.name}}</h4>
+      </div>
+
+</div>
+        
+
+
+

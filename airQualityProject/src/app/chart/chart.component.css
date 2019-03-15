@@ -1,0 +1,13 @@
+.graph{display:block;min-height:300px}
+.graph span{display:inline-block}
+
+.grid{display:grid;align-content:center;justify-content:center;overflow:hidden;position:relative;}
+.ciggs{padding:50px;position:relative;width:300px;width:unset;margin:0 auto;margin:unset}
+.cigg{display:inline-block;width:15px;height:150px;margin:0 5px;background:url('../../assets/images/cigg.png') no-repeat;background-size:cover;background-position:bottom center}
+.pmWrap{position:absolute;top:0;left:0;width:100%;height:100%;}
+h4{text-transform:capitalize;text-align:center;left:0;width:100%;bottom:0;}
+
+@media (min-width: 768px) {
+.ciggs{padding:100px;position:relative;width:400px;width:unset}
+h4{text-align:left;padding-left:20px;}
+}

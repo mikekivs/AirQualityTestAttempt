@@ -1,0 +1,83 @@
+<div class="hero row">
+  <div class="container logo-wrap">
+    <div class="pad"><img src="../assets/images/logo.png" alt="logo"></div>
+  </div>
+  <div class="container cont">
+    <div class="pad">
+      <h1 [innerHTML]="addSmoke(response.hero_1_title)" *ngIf="response"></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row menu" *ngIf="response">
+  <div class="container">
+    <div class="pad clear">
+    <div class="w50">
+      <a [href]="response['article-info_1_category_url']" target="_blank">{{categoryLabel}}: {{response['article-info_1_category']}}</a>
+      <span>{{response['article-info_1_date']}}</span>
+      <span>{{response['article-info_1_byline']}}</span>
+    </div>
+    <div class="w50">
+      <a (click)="switchLanguage()" class="link">{{changeLanguageLabel}}</a>
+      <a href="#form" mat-raised-button color="primary">{{buttonLabel}}</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="container">
+      <div class="pad">
+        <p>{{response?.p_1_value}}</p>
+        <p>{{response?.p_2_value}}</p>
+        <p>{{response?.p_3_value}}</p>
+        <p>{{response?.p_4_value}}</p>
+        <p>{{response?.p_5_value}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row form" id="form">
+    <div class="container">
+      <div class="pad clear">
+        <h2>{{formLabel}}</h2>
+        <div class="w50">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input type="text" (focus)="filterCities()" placeholder="{{inputDescription}}" aria-label="Number" matInput [formControl]="inputControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let city of filteredOptions | async" [value]="city?.name" (click)='selectCity(city?.id)'>
+                      {{city?.name}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+              <b *ngIf="compare">{{compareLabel}} : {{selectedCity.name}} vs {{compareCity?.name}}</b>
+        </div>
+        <div class="w50 pad-top">
+            <mat-checkbox [(ngModel)]="compare" *ngIf="selectedCity" (click)="clearCompareCity()">{{compareLabel}}</mat-checkbox>
+        </div>
+      </div>
+      <div class="pad clear">
+        <div [ngClass]="{'w50': compare}"><app-chart [city]="selectedCity" *ngIf="selectedCity"></app-chart></div>
+        <div class="w50"><app-chart [city]="compareCity" *ngIf="compareCity"></app-chart></div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="row">
+      <div class="container">
+        <div class="pad">
+          <h2>{{response?.p_6_value}}</h2>
+          <p>{{response?.p_7_value}}</p>
+          <p>{{response?.p_8_value}}</p>
+          <p>{{response?.p_9_value}}</p>
+          <p>{{response?.p_10_value}}</p>
+        </div>
+        <div class="pad bottom text-center">
+            <a href="#form" mat-raised-button color="primary" class="button">{{buttonLabel}}</a>
+        </div>
+      </div>
+    </div>
